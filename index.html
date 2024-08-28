@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="carousel-main-container">
+        <div class="header">
+            <div class="tabs">
+                <div class="tab active" id="running" onclick="selectTab('running')">RUNNING</div>
+                <div class="tab" id="walking" onclick="selectTab('walking')">WALKING</div>
+                <div class="tab" id="training" onclick="selectTab('training')">TRAINING</div>
+                <div class="tab" id="classics" onclick="selectTab('classics')">CLASSICS</div>
+            </div>
+            <div class="view-all" onclick="viewAll()">VIEW ALL</div>
+        </div>
+
+        <div class="carousel-container">
+            <button class="scroll-button left" onclick="scrollLeftAction()">&#10094;</button>
+            <div class="product-cards" id="product-cards">
+            </div>
+            <button class="scroll-button right" onclick="scrollRightAction()">&#10095;</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
