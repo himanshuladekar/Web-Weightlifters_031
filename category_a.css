@@ -1,0 +1,98 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .category_a{
+    max-width: 1300px;
+    width: 100%;
+    height: auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .c_card_a{
+    height: auto;
+    width: 100%;
+    /* background-color: green; */
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cat_card_a{
+    height: auto;
+    width: 32.5%;
+    /* background-color: red; */
+    cursor: pointer;
+    position: relative;
+  }
+  
+  
+  .cat_card_a a img{
+      height: 100%;
+      width: 100%;
+  }
+  
+  .cat_title_a{
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    color: white;
+  }
+  
+  .carousel_a{
+    position: relative;
+    max-width: 1300px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20vh;
+  }
+  
+  .carousel-inner_a{
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-item_a{
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .carousel-item img_a{
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+  }
+  
+  .carousel-control_a{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 30%;
+    user-select: none;
+  }
+  
+  .prev_a{
+    left: 10px;
+  }
+  
+  .next_a{
+    right: 10px;
+  }
+  
+  .carousel-control:hover_a{
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
