@@ -7,6 +7,7 @@ body {
 
 .header {
     display: flex;
+    width: 1300px;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
@@ -49,13 +50,18 @@ body {
 }
 
 .view-all {
+    align-items: end;
     font-size: 16px;
     font-weight: bold;
     color: #13223d;
     cursor: pointer;
     text-decoration: underline;
+    position:inherit;
 }
 
+.carousel-main-container{
+    width: 1300px;
+}
 .carousel-container {
     position: relative;
     width: 100%;
@@ -87,7 +93,7 @@ body {
 
 .card img {
     width: 100%;
-    height: auto;
+    height: 50%;
 }
 
 .details {
@@ -144,25 +150,33 @@ body {
 }
 
 .scroll-button {
+    margin: 20px;
+    padding: 10px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%;
+    background-color: #13223d; 
     color: white;
     border: none;
-    padding: 10px;
     cursor: pointer;
-    z-index: 1;
-}
-
-.scroll-button:hover {
-    background-color: #ccc;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px; 
 }
 
 .scroll-button.left {
-    left: 0;
+    left: 10px;
 }
 
 .scroll-button.right {
-    right: 0;
+    right: 10px;
+}
+
+.scroll-button:hover {
+    background-color: #ff0000; 
 }
