@@ -25,6 +25,28 @@ nextBtn.addEventListener('click', (e) => {
 // Auto-advance slides every 5 seconds
 setInterval(() => showSlide(currentIndex + 1), 5000);
 
+const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+function toggleScrollToTopButton() {
+    if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add('visible');
+    } else {
+        scrollToTopBtn.classList.remove('visible');
+    }
+}
+
+window.addEventListener('scroll', toggleScrollToTopButton);
+
+scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Initial check
+toggleScrollToTopButton();
+
 // AR Carousel Functionality
 function showSlideA(index) {
     const slides = document.querySelectorAll('.carousel-item_a');
