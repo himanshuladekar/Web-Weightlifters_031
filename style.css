@@ -295,7 +295,10 @@ body {
 .scroll-to-top.visible {
   opacity: 1;
 }
-
+#contachIdLink,
+#homeIdLink:hover {
+  cursor: pointer;
+}
 /* Responsive Styles */
 @media (max-width: 768px) {
   .top-nav,

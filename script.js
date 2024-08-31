@@ -50,10 +50,73 @@ toggleScrollToTopButton();
 
 const iconLink = document.getElementById('iconLink');
 
-iconLink.addEventListener('click', function() {
-  
+iconLink.addEventListener('click', function () {
+
     window.location.href = './icon.html';
 });
+
+const womenLink = document.getElementById('womenIdLink');
+
+womenLink.addEventListener('click', function () {
+
+    window.location.href = './female.html';
+});
+const newLink = document.getElementById('newIdLink');
+
+newLink.addEventListener('click', function () {
+
+    window.location.href = './new.html';
+});
+const menLink = document.getElementById('menIdLink');
+
+menLink.addEventListener('click', function () {
+
+    window.location.href = './men.html';
+});
+const homeLink = document.getElementById('homeIdLink');
+
+homeLink.addEventListener('click', function () {
+
+    window.location.href = './index.html';
+});
+const contactLink = document.getElementById('contachIdLink');
+
+contactLink.addEventListener('click', function () {
+
+    window.location.href = './contact.html';
+});
+const loginLink = document.getElementById('loginIdLink');
+
+loginLink.addEventListener('click', function () {
+
+    window.location.href = './login.html';
+});
+const sportsLink = document.getElementById('sportsIdLink');
+
+sportsLink.addEventListener('click', function () {
+
+    window.location.href = './sportsAbk.html';
+});
+const aperalLink = document.getElementById('aperalIdLink');
+
+aperalLink.addEventListener('click', function () {
+
+    window.location.href = './aparel.html';
+});
+const accessoriesLink = document.getElementById('accessroiesIdLink');
+
+accessoriesLink.addEventListener('click', function () {
+
+    window.location.href = './assessories.html';
+});
+const footwearLink = document.getElementById('footwearIdLink');
+
+footwearLink.addEventListener('click', function () {
+
+    window.location.href = './footwear.html';
+});
+
+
 
 
 
@@ -138,7 +201,7 @@ async function loadProducts() {
 
 function loadCards() {
     const productCardsContainer = document.getElementById('product-cards');
-    productCardsContainer.innerHTML = '';  
+    productCardsContainer.innerHTML = '';
 
     products.forEach(product => {
         const card = createCard(product);
@@ -148,7 +211,7 @@ function loadCards() {
 
 function createCard(product) {
     const card = document.createElement('div');
-    card.classList.add('card', product.type.toLowerCase().replace(/\s+/g, '-')); 
+    card.classList.add('card', product.type.toLowerCase().replace(/\s+/g, '-'));
 
     let sizesHtml = '';
     product.sizes.forEach(size => {
@@ -171,7 +234,7 @@ function createCard(product) {
 }
 
 // Size Button Click Event
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     if (event.target.matches('.size-button')) {
         alert(`Selected size: ${event.target.textContent}`);
     }
@@ -184,37 +247,37 @@ document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll(".nav-links a");
 
     links.forEach((link) => {
-      link.addEventListener("click", (event) => {
-        event.preventDefault();
-        const targetId = event.target.id;
-        document.getElementById(targetId).scrollIntoView({
-          behavior: "smooth",
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const targetId = event.target.id;
+            document.getElementById(targetId).scrollIntoView({
+                behavior: "smooth",
+            });
         });
-      });
     });
-  });
-  function openModal() {
+});
+function openModal() {
     document.getElementById("signupModal").style.display = "block";
-  }
+}
 
-  // Close Modal
-  function closeModal() {
+// Close Modal
+function closeModal() {
     document.getElementById("signupModal").style.display = "none";
-  }
+}
 
-  // Handle Sign-Up Form Submission
-  document
+// Handle Sign-Up Form Submission
+document
     .getElementById("signupForm")
     .addEventListener("submit", function (event) {
-      event.preventDefault();
+        event.preventDefault();
 
-      // Process the form data
-      var email = document.getElementById("email").value;
-      var password = document.getElementById("password").value;
+        // Process the form data
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
 
-      // Example: Display the data
-      alert("Email: " + email + "\nPassword: " + password);
+        // Example: Display the data
+        alert("Email: " + email + "\nPassword: " + password);
 
-      // Close the modal after submission
-      closeModal();
+        // Close the modal after submission
+        closeModal();
     });
