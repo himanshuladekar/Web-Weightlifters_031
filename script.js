@@ -47,6 +47,16 @@ scrollToTopBtn.addEventListener('click', () => {
 // Initial check
 toggleScrollToTopButton();
 
+
+const iconLink = document.getElementById('iconLink');
+
+iconLink.addEventListener('click', function() {
+  
+    window.location.href = './icon.html';
+});
+
+
+
 // AR Carousel Functionality
 function showSlideA(index) {
     const slides = document.querySelectorAll('.carousel-item_a');
