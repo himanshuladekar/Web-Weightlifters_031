@@ -556,6 +556,7 @@ body {
   scroll-behavior: smooth;
   white-space: nowrap;
   width: 100%;
+  height: auto;
 }
 
 .card {
@@ -568,6 +569,7 @@ body {
   position: relative;
   transition: transform 0.3s;
   padding: 10px;
+  height: auto !important;
 }
 
 .card img {
