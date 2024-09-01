@@ -184,10 +184,12 @@
     .toggle-dropdown {
       display: none;
     }
+
     #contachIdLink,
-  #homeIdLink:hover {
-    cursor: pointer;
-  }
+    #homeIdLink:hover {
+      cursor: pointer;
+    }
+
     .dropbtn {
       color: white;
       font-size: 20px;
@@ -294,19 +296,21 @@
 
     /* card styling */
     .card-container {
+      max-width: 1350px;
+      margin: auto;
       display: flex;
-      gap: 20px;
+      padding: 0px 30px;
       flex-wrap: wrap;
       align-content: center;
-      margin-left: 80px;
       margin-top: 80px;
     }
 
     .card {
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       padding: 10px;
-      width: 320px;
+      width: 300px;
       height: 500px;
+      margin: auto;
       margin-top: 20px;
     }
 
@@ -390,6 +394,27 @@
     div#span>button:active {
       background-color: #1a1a1a;
       color: #ccc;
+    }
+
+    @media(max-width:735px) {
+      div#span>button {
+        border: 1px solid;
+        padding: 8px 15px;
+        border-radius: 10px;
+        font-size: 12px;
+      }
+    }
+
+    @media(max-width:550px) {
+      #span {
+        max-width: 300px;
+        margin: auto;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
     }
 
     .scroll-to-top {
@@ -587,7 +612,7 @@
         <!-- <a href="#">WOMEN</a> -->
         <!-- <a href="#">ICONS</a> -->
         <!-- <a href="./icon.html" target="_self">ICONS</a> -->
-        <a id="iconLink" target="_self">ICONS</a>
+        <a id="iconIdLink" target="_self">ICONS</a>
         <div class="dropdownN">
           <a id="sportsIdLink" class="active">SPORTS</a>
           <div class="dropdown-contentN">
@@ -624,7 +649,7 @@
 
         <!-- <a href="#">CLASSICS</a> -->
         <div class="dropdownN">
-          <a href="#" class="active">CLASSICS</a>
+          <a id="classicIdLink" class="active">CLASSICS</a>
           <div class="dropdown-contentN">
             <div class="dropdown-column">
               <h3>NEW & FEATURED</h3>
@@ -652,7 +677,7 @@
         </div>
         <!-- <a href="#" class="sale">SALE</a> -->
         <div class="dropdownN">
-          <a href="#" class="active">SALE</a>
+          <a id="saleIdLink" class="active">SALE</a>
           <div class="dropdown-contentN">
             <div class="dropdown-column">
               <h3>MEN</h3>
@@ -849,7 +874,7 @@
         cardContainer.appendChild(card);
       });
     }
-    const iconLink = document.getElementById('iconLink');
+    const iconLink = document.getElementById('iconIdLink');
 
     iconLink.addEventListener('click', function () {
 
@@ -868,18 +893,52 @@
 
       window.location.href = './new.html';
     });
-    const homeLink = document.getElementById('homeIdLink');
-
-    homeLink.addEventListener('click', function () {
-
-      window.location.href = './index.html';
-    });
     const menLink = document.getElementById('menIdLink');
 
     menLink.addEventListener('click', function () {
 
       window.location.href = './men.html';
     });
+    const homeLink = document.getElementById('homeIdLink');
+
+    homeLink.addEventListener('click', function () {
+
+      window.location.href = './index.html';
+    });
+    const contactLink = document.getElementById('contachIdLink');
+
+    contactLink.addEventListener('click', function () {
+
+      window.location.href = './contact.html';
+    });
+    const loginLink = document.getElementById('loginIdLink');
+
+    loginLink.addEventListener('click', function () {
+
+      window.location.href = './login.html';
+    });
+    const sportsLink = document.getElementById('sportsIdLink');
+
+    sportsLink.addEventListener('click', function () {
+
+      window.location.href = './sportsAbk.html';
+    });
+
+
+    const saleIdLink = document.getElementById('saleIdLink');
+
+    saleIdLink.addEventListener('click', function () {
+
+      window.location.href = './saleABK.html';
+    });
+    const classicLink = document.getElementById('classicIdLink');
+    classicLink.addEventListener('click', function () {
+      console.log("click at classics")
+
+      window.location.href = './classicsABK.html';
+    });
+
+
     // Add event listeners to category buttons
     const categoryButtons = document.querySelectorAll("button");
     categoryButtons.forEach(button => {

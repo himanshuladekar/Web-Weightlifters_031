@@ -322,20 +322,23 @@
 
     /* card styling */
     .card-container {
+        max-width: 1350px;
+      margin: auto;
       display: flex;
-      gap: 20px;
+      padding : 0px 30px;
       flex-wrap: wrap;
       align-content: center;
-      margin-left: 80px;
       margin-top: 80px;
     }
 
     .card {
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       padding: 10px;
-      width: 320px;
+      width: 300px;
       height: 500px;
+      margin: auto;
       margin-top: 20px;
+      
     }
 
     .card img {
@@ -418,6 +421,25 @@
     div#span>button:active {
       background-color: #1a1a1a;
       color: #ccc;
+    }
+    @media(max-width:735px){
+          div#span>button{
+            border: 1px solid;
+          padding: 8px 15px;
+          border-radius: 10px;
+          font-size: 12px;
+          }
+        }
+    @media(max-width:550px){
+        #span{
+        max-width: 300px;
+        margin: auto;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap:10px;
+    }
+          
     }
   </style>
 </head>

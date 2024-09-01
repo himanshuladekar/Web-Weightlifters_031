@@ -750,7 +750,7 @@
         <!-- <a href="#">WOMEN</a> -->
         <!-- <a href="#">ICONS</a> -->
         <!-- <a href="./icon.html" target="_self">ICONS</a> -->
-        <a id="iconLink" target="_self">ICONS</a>
+        <a id="iconIdLink" target="_self">ICONS</a>
         <div class="dropdownN">
           <a id="sportsIdLink" class="active">SPORTS</a>
           <div class="dropdown-contentN">
@@ -787,7 +787,7 @@
 
         <!-- <a href="#">CLASSICS</a> -->
         <div class="dropdownN">
-          <a href="#" class="active">CLASSICS</a>
+          <a id="classicIdLink" class="active">CLASSICS</a>
           <div class="dropdown-contentN">
             <div class="dropdown-column">
               <h3>NEW & FEATURED</h3>
@@ -815,7 +815,7 @@
         </div>
         <!-- <a href="#" class="sale">SALE</a> -->
         <div class="dropdownN">
-          <a href="#" class="active">SALE</a>
+          <a id="saleIdLink" class="active">SALE</a>
           <div class="dropdown-contentN">
             <div class="dropdown-column">
               <h3>MEN</h3>
@@ -1069,37 +1069,70 @@
       e.preventDefault();
       showSlide(currentIndex + 1);
     });
-    const iconLink = document.getElementById('iconLink');
+    const iconLink = document.getElementById('iconIdLink');
 
-    iconLink.addEventListener('click', function () {
+iconLink.addEventListener('click', function () {
 
-      window.location.href = './icon.html';
-    });
+  window.location.href = './icon.html';
+});
 
-    const womenLink = document.getElementById('womenIdLink');
+const womenLink = document.getElementById('womenIdLink');
 
-    womenLink.addEventListener('click', function () {
+womenLink.addEventListener('click', function () {
 
-      window.location.href = './female.html';
-    });
-    const newLink = document.getElementById('newIdLink');
+  window.location.href = './female.html';
+});
+const newLink = document.getElementById('newIdLink');
 
-    newLink.addEventListener('click', function () {
+newLink.addEventListener('click', function () {
 
-      window.location.href = './new.html';
-    });
-    const homeLink = document.getElementById('homeIdLink');
+  window.location.href = './new.html';
+});
+const menLink = document.getElementById('menIdLink');
 
-    homeLink.addEventListener('click', function () {
+menLink.addEventListener('click', function () {
 
-      window.location.href = './index.html';
-    });
-    const menLink = document.getElementById('menIdLink');
+  window.location.href = './men.html';
+});
+const homeLink = document.getElementById('homeIdLink');
 
-    menLink.addEventListener('click', function () {
+homeLink.addEventListener('click', function () {
 
-      window.location.href = './men.html';
-    });
+  window.location.href = './index.html';
+});
+const contactLink = document.getElementById('contachIdLink');
+
+contactLink.addEventListener('click', function () {
+
+  window.location.href = './contact.html';
+});
+const loginLink = document.getElementById('loginIdLink');
+
+loginLink.addEventListener('click', function () {
+
+  window.location.href = './login.html';
+});
+const sportsLink = document.getElementById('sportsIdLink');
+
+sportsLink.addEventListener('click', function () {
+
+  window.location.href = './sportsAbk.html';
+});
+
+
+const saleIdLink = document.getElementById('saleIdNewLink');
+
+saleIdLink.addEventListener('click', function () {
+
+  window.location.href = './saleABK.html';
+});
+const classicIdLink = document.getElementById('classicIdLink');
+
+classicIdLink.addEventListener('click', function () {
+
+  window.location.href = './classicsABK.html';
+});
+
     // Auto-advance slides every 5 seconds
     setInterval(() => showSlide(currentIndex + 1), 5000);
     const scrollToTopBtn = document.querySelector('.scroll-to-top');

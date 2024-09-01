@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Classics</title>
   <script src="https://kit.fontawesome.com/0161e8f976.js" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -19,6 +19,10 @@
 
   body {
     background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    margin: 0;
   }
 
   .container {
@@ -26,7 +30,6 @@
     margin: auto !important;
   }
 
-  /* Top Navigation */
   .top-nav {
     background-color: #1a1a1a;
     color: white;
@@ -241,97 +244,6 @@
   }
 
 
-  /* Category Section */
-  .category_a {
-    max-width: 1300px;
-    width: 100%;
-    height: auto;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .c_card_a {
-    height: auto;
-    width: 100%;
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .cat_card_a {
-    height: auto;
-    width: 32.5%;
-    /* background-color: red; */
-    cursor: pointer;
-    position: relative;
-  }
-
-
-  .cat_card_a a img {
-    height: 100%;
-    width: 100%;
-  }
-
-  .cat_title_a {
-    position: absolute;
-    bottom: 10px;
-    left: 5px;
-    color: white;
-  }
-
-  .carousel_a {
-    position: relative;
-    max-width: 1300px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20vh;
-  }
-
-  .carousel-inner_a {
-    display: flex;
-    transition: transform 0.5s ease;
-  }
-
-  .carousel-item_a {
-    min-width: 100%;
-    box-sizing: border-box;
-  }
-
-  .carousel-item img_a {
-    width: 100%;
-    display: block;
-    border-radius: 10px;
-  }
-
-  .carousel-control_a {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.3);
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 24px;
-    border-radius: 30%;
-    user-select: none;
-  }
-
-  .prev_a {
-    left: 10px;
-  }
-
-  .next_a {
-    right: 10px;
-  }
-
-  .carousel-control:hover_a {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-
   .header {
     display: flex;
     width: 1300px;
@@ -386,145 +298,32 @@
     position: inherit;
   }
 
+  /* Breadcrumb */
+  .breadcrumb {
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+  }
+
+  .breadcrumb a {
+    color: #666;
+    text-decoration: none;
+  }
+
 
   #Abhishek1 {
     max-width: 1300px;
   }
 
-  .carousel-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    margin: 20px;
-    padding: 10px;
-  }
-
-  .product-cards {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    white-space: nowrap;
-    width: 100%;
-  }
-
-  .card {
-    min-width: 300px;
-    max-width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: white;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.3s;
-    padding: 10px;
-  }
-
-  .card img {
-    width: 100%;
-    height: 50%;
-  }
-
-  .details {
-    padding: 10px;
-  }
-
-  .sizes {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-    display: flex;
-    justify-content: center;
-    display: none;
-    padding: 5px 0;
-  }
-
-  .sizes button {
-    padding: 5px 8px;
-    border: none;
-    background-color: #eee;
-    cursor: pointer;
-  }
-
-  .sizes button:hover {
-    border: #ffffff;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-  }
-
-  .card:hover .sizes {
-    display: flex;
-  }
-
-  .scroll-button {
-    margin: 20px;
-    padding: 10px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #13223d;
-    color: white;
-    border: none;
-    cursor: pointer;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-  }
-
-  .scroll-button.left {
-    left: 10px;
-  }
-
-  .scroll-button.right {
-    right: 10px;
-  }
-
-  .scroll-button:hover {
-    background-color: #393e47;
-  }
-
-
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 20px;
-  }
-
   .containerABK {
     width: 100%;
-    max-width: 1300px;
+    /* max-width: 1300px; */
     background-color: #ffffff;
     padding: 20px;
     box-sizing: border-box;
   }
 
-  .breadcrumbABK {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 20px;
-  }
-
-  .breadcrumbABK a {
-    color: #13223d;
-    text-decoration: none;
-  }
-
-  .breadcrumbABK span {
-    margin: 0 5px;
-  }
-
   .headingABK {
+    width: 100%;
     font-size: 32px;
     font-weight: bold;
     color: #13223d;
@@ -562,50 +361,10 @@
     color: #ffffff;
   }
 
-  #product-listABK {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-  }
-
-  .product-cardABK {
-    width: 200px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-    background-color: #ffffff;
-  }
-
-  .product-cardABK img {
-    max-width: 100%;
-    /* height: auto; */
-    margin-bottom: 10px;
-  }
-
-
-  .signup-button {
-    background-color: #ffffff;
-    color: #0c2f52;
-    border: 2px solid #ffffff;
-    border-radius: 3px;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .signup-button:hover {
-    background-color: #0c2f52;
-    color: #ffffff;
-  }
-
-
   .filter-barABK {
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: space-between;
     padding: 10px 20px;
     border: 1px solid #e0e0e0;
@@ -620,15 +379,14 @@
     margin-right: 15px;
     cursor: pointer;
     position: relative;
+    padding: 8px 12px;
+    background-color: #fff;
+    border-radius: 4px;
+    user-select: none;
   }
 
   .sort-optionABK {
     margin-left: auto;
-  }
-
-  .arrowABK {
-    margin-left: 5px;
-    font-size: 12px;
   }
 
   .sort-textABK {
@@ -638,11 +396,12 @@
   .dropdown-contentABK {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
+    background-color: #fff;
+    min-width: 150px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     border: 1px solid #ccc;
+    margin-top: 8px;
   }
 
   .dropdown-contentABK a {
@@ -658,6 +417,46 @@
 
   .filter-optionABK:hover .dropdown-contentABK {
     display: block;
+  }
+
+  #product-containerABK {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .product-cardABK {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    position: relative;
+  }
+
+  .product-cardABK img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .sizesABK {
+    display: none;
+    position: absolute;
+    width: 70%;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 12px;
+    z-index: 10;
   }
 
   .scroll-to-top {
@@ -687,9 +486,26 @@
   .scroll-to-top.visible {
     opacity: 1;
   }
+
   #contachIdLink,
   #homeIdLink:hover {
     cursor: pointer;
+  }
+
+  .product-cardABK:hover .sizesABK {
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .filter-barABK {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .filter-optionABK {
+      font-size: 14px;
+      padding: 6px 10px;
+    }
   }
 </style>
 
@@ -858,7 +674,7 @@
         <!-- <a href="#">WOMEN</a> -->
         <!-- <a href="#">ICONS</a> -->
         <!-- <a href="./icon.html" target="_self">ICONS</a> -->
-        <a id="iconLink" target="_self">ICONS</a>
+        <a id="iconIdLink" target="_self">ICONS</a>
         <div class="dropdownN">
           <a id="sportsIdLink" class="active">SPORTS</a>
           <div class="dropdown-contentN">
@@ -895,7 +711,7 @@
 
         <!-- <a href="#">CLASSICS</a> -->
         <div class="dropdownN">
-          <a href="#" class="active">CLASSICS</a>
+          <a id="classicIdLink" class="active">CLASSICS</a>
           <div class="dropdown-contentN">
             <div class="dropdown-column">
               <h3>NEW & FEATURED</h3>
@@ -923,7 +739,7 @@
         </div>
         <!-- <a href="#" class="sale">SALE</a> -->
         <div class="dropdownN">
-          <a href="#" class="active">SALE</a>
+          <a id="saleIdNewLink" class="active">SALE</a>
           <div class="dropdown-contentN">
             <div class="dropdown-column">
               <h3>MEN</h3>
@@ -957,27 +773,21 @@
         alt="Aditya Birla Fashion" />
     </nav>
 
+
     <div class="containerABK">
       <div class="breadcrumbABK">
-        <a href="#">Reebok</a> <span>&gt;</span> <span>Sports</span>
+        <a href="#">Reebok</a> <span>&gt;</span> <span>Classics</span>
       </div>
-
-      <div class="headingABK">
-        <img src="	https://assets.trendin.com/img/app/categorymedia/production/1/145-66617-16143.jpg?auto=format&w=1600"
-          alt="">
-      </div>
-
       <div class="subtitleABK">SELECT YOUR CATEGORY</div>
 
       <div class="filter-buttonsABK">
         <button class="filter-buttonABK" onclick="filterProductsABK('all')">All</button>
-        <button class="filter-buttonABK" onclick="filterProductsABK('leggingsABK')">Leggings & Tights</button>
-        <button class="filter-buttonABK" onclick="filterProductsABK('pantsABK')">Pants & Sweatpants</button>
-        <button class="filter-buttonABK" onclick="filterProductsABK('sports-brasABK')">Sports Bras & Tank Tops</button>
-        <button class="filter-buttonABK" onclick="filterProductsABK('compressionABK')">Compression & Tights</button>
-        <button class="filter-buttonABK" onclick="filterProductsABK('accessoriesABK')">Training Accessories</button>
-        <button class="filter-buttonABK" onclick="filterProductsABK('water-bottlesABK')">Other Accessories & Water
-          Bottles</button>
+        <button class="filter-buttonABK" onclick="filterProductsABK('classics')">Classic Shoes</button>
+        <button class="filter-buttonABK" onclick="filterProductsABK('shirts')">T-Shirts</button>
+        <button class="filter-buttonABK" onclick="filterProductsABK('leggings')">Leggings & Tights</button>
+        <button class="filter-buttonABK" onclick="filterProductsABK('polo')">T-Shirts & Polo Shirts</button>
+        <button class="filter-buttonABK" onclick="filterProductsABK('hoodies')">Hoodies & Sweatshirts</button>
+        <button class="filter-buttonABK" onclick="filterProductsABK('pants')">Pants & Sweatpants</button>
       </div>
 
       <div class="filter-barABK">
@@ -1062,180 +872,249 @@
           </div>
         </div>
 
+        <div class="filter-optionABK" onclick="toggleDropdownABK('neckDropdownABK')">
+          Sports <span class="arrowABK">▼</span>
+          <div id="sportsDropdownABK" class="dropdown-contentABK">
+            <a href="#">Classics</a>
+            <a href="#">Walking</a>
+          </div>
+        </div>
+
+        <div class="filter-optionABK" onclick="toggleDropdownABK('neckDropdownABK')">
+          Collabs <span class="arrowABK">▼</span>
+          <div id="collabsDropdownABK" class="dropdown-contentABK">
+            <a href="#">Classics</a>
+          </div>
+        </div>
+
+        <div class="filter-optionABK" onclick="toggleDropdownABK('neckDropdownABK')">
+          Technology <span class="arrowABK">▼</span>
+          <div id="technologyDropdownABK" class="dropdown-contentABK">
+            <a href="#">Floatride Fuel</a>
+          </div>
+        </div>
+
         <div class="filter-optionABK sort-optionABK" onclick="toggleDropdownABK('sortDropdownABK')">
-          Sort By <span class="sort-textABK">Popular</span> <span class="arrowABK">▼</span>
+          Sort By <span class="arrowABK">▼</span>
           <div id="sortDropdownABK" class="dropdown-contentABK">
-            <a href="#">Popular</a>
-            <a href="#">Newest</a>
             <a href="#">Price: Low to High</a>
+            <a href="#">Price: High to Low</a>
+            <a href="#">Newest Arrivals</a>
           </div>
         </div>
       </div>
-      <div id="product-listABK">
 
-      </div>
-
-
-
-
-
-      <footer class="bg-gray-900 text-white py-8">
-        <div class="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-20 ">
-          <div>
-            <h2 class="font-bold mb-4 ">NEED HELP?</h2>
-            <ul>
-              <li><a href="#" class="hover:underline">Order Status</a></li>
-              <li><a href="#" class="hover:underline">Delivery</a></li>
-              <li><a href="#" class="hover:underline">Returns</a></li>
-              <li><a href="#" class="hover:underline">FAQs</a></li>
-              <li><a href="#" class="hover:underline">Shipping Policy</a></li>
-              <li><a href="#" class="hover:underline">Return And Cancellation Policy</a></li>
-              <li><a href="#" class="hover:underline">Contact Us</a></li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="font-bold mb-4">ABOUT US</h2>
-            <ul>
-              <li><a href="#" class="hover:underline">Aditya Birla Fashion & Retail Ltd</a></li>
-              <li><a href="#" class="hover:underline">Find A Store</a></li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="font-bold mb-4">JOIN THE REEBOK COMMUNITY</h2>
-            <form>
-              <input type="text" placeholder="Enter your e-mail / mobile number"
-                class="bg-slate-900 border-b border-gray-700 p-2 rounded text-white w-full mb-2">
-
-            </form>
-            <p class="mt-4">Sign up for updates on the latest Reebok collection, campaigns and videos.</p>
-
-            <div class=" mt-10 flex justify-between items-center ">
-              <h2 class="font-bold ">FIND US ON SOCIAL</h2>
-
-              <i class="fa-brands fa-facebook-f fa-lg"></i>
-              <i class="fa-brands fa-x-twitter fa-lg"></i>
-              <i class="fa-brands fa-instagram fa-lg"></i>
-              <i class="fa-brands fa-youtube fa-lg"></i>
-              <i class="fa-brands fa-linkedin fa-lg"></i>
-            </div>
-          </div>
-        </div>
-        <div class="border-t border-white-700 mt-8 pt-4 text-center text-sm flex justify-between items-center ">
-          <div>
-            <a href="#" class="hover:underline ml-20">Privacy Policy </a> |
-            <a href="#" class="hover:underline">Cookie Policy</a>
-          </div>
-          <p class="mt-2">© 2023 Madura Fashion & Lifestyle, A Division of Aditya Birla Fashion & Retail Limited. All
-            Rights Reserved.</p>
-        </div>
-      </footer>
-
+      <div id="product-containerABK"></div>
     </div>
 
+    <footer class="bg-gray-900 text-white py-8">
+      <div class="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-20">
+        <div>
+          <h2 class="font-bold mb-4">NEED HELP?</h2>
+          <ul>
+            <li><a href="#" class="hover:underline">Order Status</a></li>
+            <li><a href="#" class="hover:underline">Delivery</a></li>
+            <li><a href="#" class="hover:underline">Returns</a></li>
+            <li><a href="#" class="hover:underline">FAQs</a></li>
+            <li><a href="#" class="hover:underline">Shipping Policy</a></li>
+            <li><a href="#" class="hover:underline">Return And Cancellation Policy</a></li>
+            <li><a href="#" class="hover:underline">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-bold mb-4">ABOUT US</h2>
+          <ul>
+            <li><a href="#" class="hover:underline">Aditya Birla Fashion & Retail Ltd</a></li>
+            <li><a href="#" class="hover:underline">Find A Store</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-bold mb-4">JOIN THE REEBOK COMMUNITY</h2>
+          <form>
+            <input type="text" placeholder="Enter your e-mail / mobile number"
+              class="bg-slate-900 border-b border-gray-700 p-2 rounded text-white w-full mb-2">
+          </form>
+          <p class="mt-4">Sign up for updates on the latest Reebok collection, campaigns and videos.</p>
+
+          <div class="mt-10 flex justify-between items-center">
+            <h2 class="font-bold">FIND US ON SOCIAL</h2>
+            <i class="fa-brands fa-facebook-f fa-lg"></i>
+            <i class="fa-brands fa-x-twitter fa-lg"></i>
+            <i class="fa-brands fa-instagram fa-lg"></i>
+            <i class="fa-brands fa-youtube fa-lg"></i>
+            <i class="fa-brands fa-linkedin fa-lg"></i>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white-700 mt-8 pt-4 text-center text-sm flex justify-between items-center">
+        <div>
+          <a href="#" class="hover:underline ml-20">Privacy Policy</a> |
+          <a href="#" class="hover:underline">Cookie Policy</a>
+        </div>
+        <p class="mt-2">© 2023 Madura Fashion & Lifestyle, A Division of Aditya Birla Fashion & Retail Limited. All
+          Rights Reserved.</p>
+      </div>
+    </footer>
+    <!-- <script src="script.js"></script> -->
     <script src="https://kit.fontawesome.com/9222c058aa.js" crossorigin="anonymous"></script>
+    <script>
+     document.addEventListener('DOMContentLoaded', () => {
+  filterProductsABK('all');
+});
+
+const classic = "./json/productsABK.json";
+
+function filterProductsABK(category) {
+  console.log(`Selected Category: ${category}`);
+  
+  fetch(classic)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Data received from JSON:', data);
+      const products = data;
+      
+      const filteredProducts = category === 'all'
+        ? products
+        : products.filter(product => product.category.toLowerCase().includes(category.toLowerCase()));
+
+      displayProductsABK(filteredProducts);
+    })
+    .catch(error => {
+      console.error('Error fetching products:', error);
+      alert('Failed to load products. Please check the console for details.');
+    });
+}
+
+function displayProductsABK(products) {
+  const container = document.getElementById('product-containerABK');
+  container.innerHTML = '';
+
+  products.forEach(product => {
+    const productCard = document.createElement('div');
+    productCard.classList.add('product-cardABK');
+    
+    const sizes = product.sizes ? product.sizes.join(', ') : 'N/A'; // Ensure sizes are handled safely
+
+    productCard.innerHTML = `
+      <img src="${product.image}" alt="${product.name}" class="product-imageABK">
+      <div class="product-nameABK">${product.name}</div>
+      <div class="product-priceABK">$${product.price}</div>
+      <div class="sizesABK">Sizes: ${sizes}</div>
+    `;
+
+    container.appendChild(productCard);
+  });
+}
+
+
+
+
+      const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+      function toggleScrollToTopButton() {
+        if (window.scrollY > 300) {
+          scrollToTopBtn.classList.add('visible');
+        } else {
+          scrollToTopBtn.classList.remove('visible');
+        }
+      }
+
+      window.addEventListener('scroll', toggleScrollToTopButton);
+
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      // Initial check
+      toggleScrollToTopButton();
+
+
+
+      const iconLink = document.getElementById('iconIdLink');
+
+      iconLink.addEventListener('click', function () {
+
+        window.location.href = './icon.html';
+      });
+
+      const womenLink = document.getElementById('womenIdLink');
+
+      womenLink.addEventListener('click', function () {
+
+        window.location.href = './female.html';
+      });
+      const newLink = document.getElementById('newIdLink');
+
+      newLink.addEventListener('click', function () {
+
+        window.location.href = './new.html';
+      });
+      const menLink = document.getElementById('menIdLink');
+
+      menLink.addEventListener('click', function () {
+
+        window.location.href = './men.html';
+      });
+      const homeLink = document.getElementById('homeIdLink');
+
+      homeLink.addEventListener('click', function () {
+
+        window.location.href = './index.html';
+      });
+      const contactLink = document.getElementById('contachIdLink');
+
+      contactLink.addEventListener('click', function () {
+
+        window.location.href = './contact.html';
+      });
+      const loginLink = document.getElementById('loginIdLink');
+
+      loginLink.addEventListener('click', function () {
+
+        window.location.href = './login.html';
+      });
+      const sportsLink = document.getElementById('sportsIdLink');
+
+      sportsLink.addEventListener('click', function () {
+
+        window.location.href = './sportsAbk.html';
+      });
+     
+
+      const saleIdLink = document.getElementById('saleIdNewLink');
+
+      saleIdLink.addEventListener('click', function () {
+
+        window.location.href = './saleABK.html';
+      });
+      const classicIdLink = document.getElementById('classicIdLink');
+
+      classicIdLink.addEventListener('click', function () {
+
+        window.location.href = './classicsABK.html';
+      });
+
+
+
+
+      function toggleDropdownABK(id) {
+        const dropdown = document.getElementById(id);
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        filterProductsABK('all');
+      });
+    </script>
+  </div>
 </body>
-<script>
-  function fetchProducts() {
-    fetch("https://reebok-f74f2-default-rtdb.firebaseio.com/.json")
-      .then((res) => res.json())
-      .then((data) => displayProductsF(data))
-      .catch((err) => console.log(err));
-  }
-
-  function displayProductsF(products) {
-    // console.log(products);
-    let productList = document.getElementById('product-listABK');
-
-    // Filter out products with the category 'footwear'
-    const filteredProducts = products.filter(product => product.category === 'Footwear');
-    console.log(filteredProducts);
-    filteredProducts.forEach(product => {
-      // console.log(product.image);
-      let productCard = document.createElement('div');
-      productCard.className = `product-cardABK ${product.category}ABK`;
-      productCard.innerHTML = `
-                <img src="${product.image}" alt="${product.name}">
-                <p>${product.name}</p>
-            `;
-      productList.append(productCard);
-    });
-  }
-
-  fetchProducts();
-
-
-  const iconLink = document.getElementById('iconLink');
-
-  iconLink.addEventListener('click', function () {
-
-    window.location.href = './icon.html';
-  });
-
-  const womenLink = document.getElementById('womenIdLink');
-
-  womenLink.addEventListener('click', function () {
-
-    window.location.href = './female.html';
-  });
-  const newLink = document.getElementById('newIdLink');
-
-  newLink.addEventListener('click', function () {
-
-    window.location.href = './new.html';
-  });
-  const menLink = document.getElementById('menIdLink');
-
-  menLink.addEventListener('click', function () {
-
-    window.location.href = './men.html';
-  });
-  const homeLink = document.getElementById('homeIdLink');
-
-  homeLink.addEventListener('click', function () {
-
-    window.location.href = './index.html';
-  });
-  const contactLink = document.getElementById('contachIdLink');
-
-  contactLink.addEventListener('click', function () {
-
-    window.location.href = './contact.html';
-  });
-  const loginLink = document.getElementById('loginIdLink');
-
-  loginLink.addEventListener('click', function () {
-
-    window.location.href = './login.html';
-  });
-  const sportsLink = document.getElementById('sportsIdLink');
-
-  sportsLink.addEventListener('click', function () {
-
-    window.location.href = './sportsAbk.html';
-  });
-  const aperalLink = document.getElementById('aperalIdLink');
-
-
-
-  const scrollToTopBtn = document.querySelector('.scroll-to-top');
-
-  function toggleScrollToTopButton() {
-    if (window.scrollY > 300) {
-      scrollToTopBtn.classList.add('visible');
-    } else {
-      scrollToTopBtn.classList.remove('visible');
-    }
-  }
-
-  window.addEventListener('scroll', toggleScrollToTopButton);
-
-  scrollToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-
-</script>
 
 </html>

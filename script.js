@@ -48,7 +48,7 @@ scrollToTopBtn.addEventListener('click', () => {
 toggleScrollToTopButton();
 
 
-const iconLink = document.getElementById('iconLink');
+const iconLink = document.getElementById('iconIdLink');
 
 iconLink.addEventListener('click', function () {
 
@@ -115,6 +115,20 @@ footwearLink.addEventListener('click', function () {
 
     window.location.href = './footwear.html';
 });
+
+const saleIdLink = document.getElementById('saleIdLink');
+
+saleIdLink.addEventListener('click', function () {
+
+    window.location.href = './saleABK.html';
+});
+const classicIdLink = document.getElementById('classicIdLink');
+
+classicIdLink.addEventListener('click', function () {
+
+    window.location.href = './classicsABK.html';
+});
+
 
 
 
