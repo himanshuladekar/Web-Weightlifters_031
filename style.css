@@ -44,8 +44,8 @@ body {
 }
 
 .logoG img {
-  height: 20px;
-  width: 150px;
+  height: auto;
+  max-width: 100px;
 }
 
 .nav-links {
