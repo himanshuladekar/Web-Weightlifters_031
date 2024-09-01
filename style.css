@@ -434,6 +434,53 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+
+
+.carousel-container_a {
+  position: relative;
+  width: 100%;
+  /* max-width: 1300px; */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-inner_a {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item_a {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-item_a img {
+  width: 100%;
+  display: block;
+}
+
+.carousel-control_a {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 2em;
+  padding: 0 0.5em;
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.carousel-control_a.previous_a {
+  left: 10px;
+}
+
+.carousel-control_a.nextt_a {
+  right: 10px;
+}
+
+
 /* Abhishek css ends here */
 
 .header {

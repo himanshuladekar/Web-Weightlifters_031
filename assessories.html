@@ -577,11 +577,15 @@ body {
             padding: 10px;
             text-align: center;
             background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            cursor: pointer;
         }
 
         .product-cardABK img {
             max-width: 100%;
-            /* height: auto; */
+            height: 70%;
             margin-bottom: 10px;
         }
 
@@ -685,10 +689,21 @@ body {
 .scroll-to-top.visible {
   opacity: 1;
 }
-contachIdLink #contachIdLink,
+#contachIdLink #contachIdLink,
   #homeIdLink:hover {
     cursor: pointer;
   }
+.line_through{
+  text-decoration: line-through;
+  color: gray;
+}
+
+.indi_product_name{
+    font-weight: bolder;
+    font-size: 20px;
+
+  }
+
 </style>
 <body>
   <div class="container">
@@ -1141,15 +1156,23 @@ contachIdLink #contachIdLink,
 
         // Filter out products with the category 'footwear'
         const filteredProducts = products.filter(product => product.category === 'Accessories');
-        console.log(filteredProducts);
+        // console.log(filteredProducts);
         filteredProducts.forEach(product => {
-            // console.log(product.image);
+            let id = product.id;
+            // console.log(id);
             let productCard = document.createElement('div');
             productCard.className = `product-cardABK ${product.category}ABK`;
             productCard.innerHTML = `
                 <img src="${product.image}" alt="${product.name}">
-                <p>${product.name}</p>
+                <p class="indi_product_name">${product.name}</p>
+                <h2>$${product.price}</h2>
+                <h2 class="line_through">$${product.price+10}</h2>
+
             `;
+            productCard.addEventListener("click",()=>{
+              console.log(id)
+              window.location.href = `individualproduct.html?id=${product.id-1}`;
+            })
             productList.append(productCard);
         });
     }

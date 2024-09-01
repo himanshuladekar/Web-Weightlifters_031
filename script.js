@@ -281,3 +281,50 @@ document
         // Close the modal after submission
         closeModal();
     });
+
+
+    // ================abhi carousel=========================
+
+const carouselInner_a = document.querySelector(".carousel-inner_a");
+const items_a = carouselInner_a.querySelectorAll(".carousel-item_a");
+const prevbutton = document.querySelector(".carousel-control_a.previous_a");
+const nextbutton = document.querySelector(".carousel-control_a.nextt_a");
+
+let curr_a = 0;
+const totalitems_a = items_a.length;
+const slideInterval_a = 3000;
+
+function showSlide_a(index) {
+  if (index < 0) index = totalitems_a - 1;
+  if (index >= totalitems_a) index = 0;
+  carouselInner_a.style.transform = `translateX(-${index * 100}%)`;
+  curr_a = index;
+}
+
+function nextSlide_a() {
+  showSlide_a(curr_a + 1);
+}
+
+function prevSlide_a() {
+  showSlide_a(curr_a - 1);
+}
+
+prevbutton.addEventListener("click", (e) => {
+  e.preventDefault();
+  prevSlide_a();
+});
+
+nextbutton.addEventListener("click", (e) => {
+  e.preventDefault();
+  nextSlide_a();
+});
+
+let slideInterval_aId = setInterval(nextSlide_a, slideInterval_a);
+
+function stopAutoSlide_a() {
+  clearInterval(slideInterval_aId);
+  slideInterval_aId = setInterval(nextSlide_a, slideInterval_a);
+}
+
+prevbutton.addEventListener("click", stopAutoSlide_a);
+nextbutton.addEventListener("click", stopAutoSlide_a);
