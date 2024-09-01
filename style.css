@@ -229,6 +229,13 @@ body {
   object-fit: contain;
 }
 
+.carousel-main-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
 /* Carousel */
 .carouselG {
   position: relative;
@@ -489,11 +496,13 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .tabs {
   display: flex;
-  gap: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .tab {
@@ -535,6 +544,7 @@ body {
   cursor: pointer;
   text-decoration: underline;
   position: inherit;
+  text-align: right;
 }
 
 #Abhishek1 {
@@ -557,6 +567,14 @@ body {
   white-space: nowrap;
   width: 100%;
   height: auto;
+  min-width: 200px;
+  max-width: 1350px;
+  flex: 1 0 21%; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
 }
 
 .card {
@@ -724,6 +742,39 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    flex-wrap: wrap;
+  }
+  
+  .product-card {
+    flex: 1 0 45%; /* Adjust for smaller screens */
+  }
+
+  .scroll-button {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .view-all {
+    padding: 5px;
+  }
+
+  .product-card {
+    flex: 1 0 100%; /* Stacking for very small screens */
+  }
+
+  .scroll-button {
+    padding: 5px;
+  }
 }
 
 @media (max-width: 768px) {
