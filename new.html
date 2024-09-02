@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reebok</title>
+  <link rel="shortcut icon" href="./assets/favicon_rbk_1_red.ico" type="image/x-icon">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <script src="https://kit.fontawesome.com/0161e8f976.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: rgb(249, 253, 252);
+    }
+
+    .container {
+      max-width: 1350px !important;
+      margin: auto !important;
+    }
+
+
+    /* Top Navigation */
+    .top-nav {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .top-nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    /* Main Navigation */
+    .main-nav {
+      background-color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logoG img {
+      height: auto;
+      max-width: 100px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1a1a1a;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .nav-links a.sale {
+      color: #c41230;
+    }
+
+    .nav-links a:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+      background-color: #c41230;
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 2px;
+    }
+
+    /* Dropdown Menu */
+    .dropdownN {
+      position: relative;
+    }
+
+    .dropdown-contentN {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 700px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      padding: 10px;
+      margin-top: 20px;
+      margin-left: -30px;
+      font-size: 13px;
+    }
+
+    .dropdownN:hover .dropdown-contentN {
+      display: flex;
+    }
+
+    .dropdown-column {
+      flex: 1;
+      padding: 10px;
+    }
+
+    .dropdown-column h3 {
+      margin-bottom: 10px;
+    }
+
+    .dropdown-column a {
+      display: block;
+      padding: 5px 0;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    /* Search Bar */
+    .search-barG {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      padding: 5px 10px;
+      margin: 10px 0;
+    }
+
+    .search-barG input {
+      border: none;
+      outline: none;
+      padding: 5px;
+      width: 200px;
+    }
+
+    /* Express Delivery Button */
+    .express-delivery {
+      background-color: #c41230;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 10px 0;
+      display: inline-block;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      padding: 10px 20px;
+      background-color: #f9f9f9;
+    }
+
+    .breadcrumb a {
+      color: #666;
+      text-decoration: none;
+    }
+
+    /* Dropdown Menu for More Brands */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .toggle-dropdown {
+      display: none;
+    }
+
+    #contachIdLink,
+    #homeIdLink:hover {
+      cursor: pointer;
+    }
+
+    .dropbtn {
+      color: white;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .ar {
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    /* Ensure the arrow rotates when dropdown is checked */
+    .toggle-dropdown:checked+label .ar {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 100vw;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      padding: 60px;
+      margin-left: -20px;
+      margin-top: 7%;
+      top: 100%;
+      z-index: 2;
+    }
+
+    /* Display dropdown content when checkbox is checked */
+    .toggle-dropdown:checked+label+.dropdown-content {
+      display: block;
+    }
+
+    .brand-gridG {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+    }
+
+    .brand-logoG {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+    }
+
+    .brand-logoG img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    /* last small cards */
+    .icon-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 20px;
+      border-top: 1px solid rgb(203, 199, 199);
+      margin-top: 20px;
+
+    }
+
+    .icon {
+      text-align: center;
+      position: relative;
+
+    }
+
+    .icon img {
+      width: 80px;
+      height: 80px;
+      margin: auto;
+      cursor: pointer;
+    }
+
+    .popup-message {
+      visibility: hidden;
+      background-color: transparent;
+      color: #fff2f2;
+      text-align: center;
+      padding: 35px;
+      border-radius: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 100%;
+      /* Position above the icon */
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .icon:hover .popup-message {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* card styling */
+    .card-container {
+      max-width: 1350px;
+      margin: auto;
+      display: flex;
+      padding: 0px 30px;
+      flex-wrap: wrap;
+      align-content: center;
+      margin-top: 80px;
+    }
+
+    .card {
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      padding: 10px;
+      width: 300px;
+      height: 500px;
+      margin: auto;
+      margin-top: 20px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 60%;
+    }
+
+    .card .price {
+      padding-left: 10px;
+      font-weight: bold;
+    }
+
+    .card .color {
+      margin-top: 5px;
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid grey;
+    }
+
+    .category {
+      font-size: 15px;
+      color: gray;
+      margin-top: 10px;
+      padding-left: 10px;
+    }
+
+    .name {
+      font-weight: bold;
+      padding-left: 10px;
+    }
+
+    .type {
+      font-size: 15px;
+      color: gray;
+      padding-left: 10px;
+
+    }
+
+    .disc {
+      font-size: 15px;
+      color: grey;
+      margin-top: 10px;
+      padding-left: 10px;
+    }
+
+    /* heading and category buttons */
+    div>h1.heading {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      color: rgb(19, 42, 60);
+      margin-top: 80px;
+    }
+
+    div>p.para {
+      font-size: 15px;
+      margin: 25px;
+      text-align: center;
+      color: rgb(19, 42, 60);
+
+    }
+
+    #span {
+      max-width: 700px;
+      margin: auto;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    div#span>button {
+      border: 1px solid;
+      padding: 8px 25px;
+      border-radius: 10px;
+      font-size: 15px;
+
+    }
+
+    div#span>button:active {
+      background-color: #1a1a1a;
+      color: #ccc;
+    }
+
+    @media(max-width:735px) {
+      div#span>button {
+        border: 1px solid;
+        padding: 8px 15px;
+        border-radius: 10px;
+        font-size: 12px;
+      }
+    }
+
+    @media(max-width:550px) {
+      #span {
+        max-width: 300px;
+        margin: auto;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+    }
+
+    .scroll-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      opacity: 0;
+      transition: opacity 0.3s, background-color 0.3s;
+      z-index: 99;
+    }
+
+    .scroll-to-top:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .scroll-to-top.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <button class="scroll-to-top" title="Go to top">↑</button>
+    <nav class="top-nav">
+      <div class="dropdown">
+        <input type="checkbox" id="toggle-dropdown" class="toggle-dropdown" />
+        <label style="margin-bottom: 0px" for="toggle-dropdown" class="dropbtn">
+          More Brands
+          <span class="ar"><i class="fa-solid fa-angle-down"></i></span>
+        </label>
+        <div class="dropdown-content">
+          <div class="brand-gridG">
+            <div class="brand-logoG">
+              <img
+                src="https://imagescdn.allensolly.com/img/app/brands/superapp/Icons/header_brand_logo_AS.png?auto=format"
+                alt="Allen Solly" />
+            </div>
+            <div class="brand-logoG">
+              <img src="./assets//header_brand_logo_AEO.png" alt="American Eagle" />
+            </div>
+            <div class="brand-logoG">
+              <img src="./assets//header_brand_logo_F21.png" alt="Forever 21" />
+            </div>
+            <div class="brand-logoG">
+              <img src="./assets//header_brand_logo_LP.png" alt="Louis Philippe" />
+            </div>
+            <div class="brand-logoG">
+              <img src="./assets//header_brand_logo_PE.png" alt="Peter England" />
+            </div>
+            <div class="brand-logoG">
+              <img src="https://imagescdn.reebok.in/img/app/brands/superapp/Icons/header_brand_logo_RBK.png?auto=format"
+                alt="Van Heusen" />
+            </div>
+            <div class="brand-logoG">
+              <img src="./assets//header_brand_logo_SC.png" alt="Reebok" />
+            </div>
+            <div class="brand-logoG">
+              <img src="./assets//header_brand_logo_VH.png" alt="Simon Carter" />
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div>
+        <a href="#"><i class="fa-solid fa-location-dot"></i> STORES</a>
+        <a id="contachIdLink"><i class="fa-regular fa-address-book"></i> CONTACT US</a>
+        <a href="#" id="loginIdLink"><i class="fa-regular fa-user"></i> LOGIN</a>
+        <a href="#"><i class="fa-regular fa-heart"></i></a>
+        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+    </nav>
+
+    <nav class="main-nav">
+      <div id="homeIdLink" class="logoG">
+        <img src="./TeEkyTrek.png"
+          alt="Reebok Logo" />
+      </div>
+      <div class="nav-links">
+        <div class="dropdownN">
+          <a id="newIdLink" class="active">NEW</a>
+          <div class="dropdown-contentN">
+            <div class="dropdown-column">
+              <h3>FEATURED</h3>
+              <a href="#">New Shoes</a>
+              <a href="#">Best Sellers</a>
+              <a href="#">New Arrivals</a>
+            </div>
+            <div class="dropdown-column">
+              <h3>COLLABS</h3>
+              <a href="#">Reebok X Dime</a>
+              <a href="#">Reebok X HRN</a>
+              <a href="#">Reebok X Spyder</a>
+              <a href="#">Reebok X Harry Potter</a>
+              <a href="#">Reebok And Hunter X Hunter</a>
+              <a href="#">Reebok X Engineered Garment</a>
+            </div>
+            <div class="dropdown-column">
+              <h3>NEW FOR MEN</h3>
+              <a href="#">Footwear</a>
+              <a href="#">Apparel</a>
+              <a href="#">All For Men</a>
+            </div>
+            <div class="dropdown-column">
+              <h3>NEW FOR WOMEN</h3>
+              <a href="#">Footwear</a>
+              <a href="#">Apparel</a>
+              <a href="#">Accessories</a>
+              <a href="#">All Women</a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdownN">
+          <a id="menIdLink" class="active">MEN</a>
+          <div class="dropdown-contentN">
+            <div class="dropdown-column">
+              <h3>FEATURED</h3>
+              <a href="#">New Shoes</a>
+              <a href="#">Best Sellers</a>
+              <a href="#">New Arrivals</a>
+              <a href="#">Club C</a>
+              <a href="#">Plus Sizes</a>
+              <a href="#">Shop By Icons</a>
+
+            </div>
+            <div class="dropdown-column">
+              <h3>SPORTS</h3>
+              <a href="#">Running</a>
+              <a href="#">Gym & Training</a>
+              <a href="#">Walking</a>
+              <a href="#">Yoga</a>
+              <a href="#">Cricket Shoes</a>
+              <a href="#">Tennis Shoes</a>
+            </div>
+            <div class="dropdown-column">
+              <h3>NEW FOR MEN</h3>
+              <a href="#">Footwear</a>
+              <a href="#">Apparel</a>
+              <a href="#">All For Men</a>
+            </div>
+            <div class="dropdown-column">
+              <h3>APPAREL</h3>
+              <a href="#">T-Shirt</a>
+              <a href="#">Polo Shirts</a>
+              <a href="#">Jackest</a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdownN">
+          <a id="womenIdLink" class="active">WOMEN</a>
+          <div class="dropdown-contentN">
+            <div class="dropdown-column">
+              <h3>FEATURED</h3>
+              <a href="#">New Shoes</a>
+              <a href="#">Best Sellers</a>
+              <a href="#">New Arrivals</a>
+            </div>
+
+            <div class="dropdown-column">
+              <h3>SPORTS</h3>
+              <a href="#">Running</a>
+              <a href="#">Gym & Training</a>
+              <a href="#">Walking</a>
+              <a href="#">Yoga</a>
+              <a href="#">Cricket Shoes</a>
+              <a href="#">Tennis Shoes</a>
+            </div>
+            <div class="dropdown-column">
+              <h3>NEW FOR MEN</h3>
+              <a href="#">Footwear</a>
+              <a href="#">Apparel</a>
+              <a href="#">All For Men</a>
+            </div>
+            <div class="dropdown-column">
+              <h3>NEW FOR WOMEN</h3>
+              <a href="#">Footwear</a>
+              <a href="#">Apparel</a>
+              <a href="#">Accessories</a>
+              <a href="#">All Women</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- <a href="#">WOMEN</a> -->
+        <!-- <a href="#">ICONS</a> -->
+        <!-- <a href="./icon.html" target="_self">ICONS</a> -->
+        <a id="iconIdLink" target="_self">ICONS</a>
+        <div class="dropdownN">
+          <a id="sportsIdLink" class="active">SPORTS</a>
+          <div class="dropdown-contentN">
+            <div class="dropdown-column">
+              <h3>FEATURED</h3>
+              <a href="#">New Shoes</a>
+              <a href="#">Best Sellers</a>
+              <a href="#">New Arrivals</a>
+            </div>
+            <div class="dropdown-column">
+              <h3>COLLABS</h3>
+              <a href="#">Reebok X Dime</a>
+              <a href="#">Reebok X HRN</a>
+              <a href="#">Reebok X Spyder</a>
+              <a href="#">Reebok X Harry Potter</a>
+              <a href="#">Reebok And Hunter X Hunter</a>
+              <a href="#">Reebok X Engineered Garment</a>
+            </div>
+            <div class="dropdown-column">
+              <h3>NEW FOR MEN</h3>
+              <a href="#">Footwear</a>
+              <a href="#">Apparel</a>
+              <a href="#">All For Men</a>
+            </div>
+            <div class="dropdown-column">
+              <h3>NEW FOR WOMEN</h3>
+              <a href="#">Footwear</a>
+              <a href="#">Apparel</a>
+              <a href="#">Accessories</a>
+              <a href="#">All Women</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- <a href="#">CLASSICS</a> -->
+        <div class="dropdownN">
+          <a id="classicIdLink" class="active">CLASSICS</a>
+          <div class="dropdown-contentN">
+            <div class="dropdown-column">
+              <h3>NEW & FEATURED</h3>
+              <a href="#">New Arrivals</a>
+              <a href="#">Classic Leather</a>
+              <a href="#">Shop By Icons</a>
+              <a href="#">Shop By Collabs</a>
+            </div>
+            <div class="dropdown-column">
+              <h3>SNEAKERS</h3>
+              <a href="#">Club C</a>
+              <a href="#">Classic Leather</a>
+              <a href="#">All Sneakers</a>
+            </div>
+            <div class="dropdown-column">
+              <h3>COLLABS</h3>
+              <a href="#">Reebok X Dime</a>
+              <a href="#">Reebok X HRN</a>
+              <a href="#">Reebok X Spyder</a>
+              <a href="#">Reebok X Harry Potter</a>
+              <a href="#">Reebok And Hunter X Hunter</a>
+              <a href="#">Reebok X Engineered Garment</a>
+            </div>
+          </div>
+        </div>
+        <!-- <a href="#" class="sale">SALE</a> -->
+        <div class="dropdownN">
+          <a id="saleIdLink" class="active">SALE</a>
+          <div class="dropdown-contentN">
+            <div class="dropdown-column">
+              <h3>MEN</h3>
+              <a href="#">New Shoes</a>
+              <a href="#">Best Sellers</a>
+              <a href="#">New Arrivals</a>
+            </div>
+            <div class="dropdown-column">
+              <h3>BOYES</h3>
+              <a href="#">ALL BOYES</a>
+              <a href="#">Best Sellers</a>
+              <a href="#">CLOTHING</a>
+            </div>
+            <div class="dropdown-column">
+              <h3>WOMEN</h3>
+              <a href="#">New Shoes</a>
+              <a href="#">Best Sellers</a>
+              <a href="#">New Arrivals</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="#">GIFT CARD</a>
+      </div>
+      <div class="search-barG">
+        <input type="text" placeholder="Search Shoes" />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <a href="#" class="express-delivery">EXPRESS DELIVERY</a>
+      <img src="https://imagescdn.reebok.in/img/app/brands/superapp/Icons/ABFRL_logo_image.svg"
+        alt="Aditya Birla Fashion" />
+    </nav>
+    <img src="https://assets.trendin.com/img/app/categorymedia/production/1/145-382-16104.jpg?auto=format&ampw=1600"
+      style="max-width: 100%; margin: auto; margin-top: 50px;">
+
+    <div>
+      <h1 class="heading">NEW ARRIVALS</h1>
+      <p class="para">SELECT YOUR CATEGORY</p>
+      <div id="span">
+        <button id="btn">Sandals & Slippers</button>
+        <button id="btn">Accessories </button>
+        <button id="btn">Clothing</button>
+        <button id="btn">Footwear</button>
+      </div>
+
+      <div class="card-container" id="cardContainer">
+        <!-- Cards will be injected here -->
+      </div>
+
+
+      <div class="icon-container">
+        <div class="icon">
+          <img
+            src="https://s7ap1.scene7.com/is/image/adityabirlafashion/alteration%20Copy%202alteration?resMode=sharp2&fmt=png8-alpha&wid=90&hei=90"
+            alt="Free Shipping" />
+          <p>FREE SHIPPING</p>
+          <span class="popup-message">Free shipping on all orders!</span>
+        </div>
+        <div class="icon">
+          <img
+            src="https://s7ap1.scene7.com/is/image/adityabirlafashion/alteration%20Copyreturn?resMode=sharp2&fmt=png8-alpha&wid=90&hei=90"
+            alt="Return Within 15 Days" />
+          <p>RETURN WITHIN 15 DAYS</p>
+          <span class="popup-message">Return any item within 15 days!</span>
+        </div>
+        <div class="icon">
+          <img
+            src="https://s7ap1.scene7.com/is/image/adityabirlafashion/icon-aedelivery?resMode=sharp2&fmt=png8-alpha&wid=90&hei=90"
+            alt="Express Delivery" />
+          <p>EXPRESS DELIVERY IN STORE MODE</p>
+          <span class="popup-message">Express delivery available in store mode!</span>
+        </div>
+      </div>
+
+
+
+
+      <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-20 ">
+          <div>
+            <h2 class="font-bold mb-4 ">NEED HELP?</h2>
+            <ul>
+              <li><a href="#" class="hover:underline">Order Status</a></li>
+              <li><a href="#" class="hover:underline">Delivery</a></li>
+              <li><a href="#" class="hover:underline">Returns</a></li>
+              <li><a href="#" class="hover:underline">FAQs</a></li>
+              <li><a href="#" class="hover:underline">Shipping Policy</a></li>
+              <li><a href="#" class="hover:underline">Return And Cancellation Policy</a></li>
+              <li><a href="#" class="hover:underline">Contact Us</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="font-bold mb-4">ABOUT US</h2>
+            <ul>
+              <li><a href="#" class="hover:underline">Aditya Birla Fashion & Retail Ltd</a></li>
+              <li><a href="#" class="hover:underline">Find A Store</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="font-bold mb-4">JOIN THE REEBOK COMMUNITY</h2>
+            <form>
+              <input type="text" placeholder="Enter your e-mail / mobile number"
+                class="bg-slate-900 border-b border-gray-700 p-2 rounded text-white w-full mb-2">
+
+            </form>
+            <p class="mt-4">Sign up for updates on the latest Reebok collection, campaigns and videos.</p>
+
+            <div class=" mt-10 flex justify-between items-center ">
+              <h2 class="font-bold ">FIND US ON SOCIAL</h2>
+
+              <i class="fa-brands fa-facebook-f fa-lg"></i>
+              <i class="fa-brands fa-x-twitter fa-lg"></i>
+              <i class="fa-brands fa-instagram fa-lg"></i>
+              <i class="fa-brands fa-youtube fa-lg"></i>
+              <i class="fa-brands fa-linkedin fa-lg"></i>
+            </div>
+          </div>
+        </div>
+        <div
+          class=" container mx-auto border-t border-white-700 mt-8 pt-4 text-center text-sm flex justify-between items-center ">
+          <div>
+            <a href="#" class="hover:underline ml-20">Privacy Policy </a> |
+            <a href="#" class="hover:underline">Cookie Policy</a>
+          </div>
+          <p class="mt-2">© 2023 Madura Fashion & Lifestyle, A Division of Aditya Birla Fashion & Retail Limited. All
+            Rights Reserved.</p>
+        </div>
+      </footer>
+
+</body>
+
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cardContainer = document.getElementById("cardContainer");
+    const newOne = "./json/new.json"
+    let products = [];
+
+    // Fetch products from the Firebase database
+    // fetch('https://reebok-f74f2-default-rtdb.firebaseio.com/.json')
+    fetch(newOne)
+      .then(response => response.json())
+      .then(data => {
+        products = data; // Store products in a global variable
+        displayProducts(products); // Initially display all products
+      })
+      .catch(error => console.error('Error fetching products:', error));
+
+    // Function to create and return a product card element
+    function createCard(product) {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      const img = document.createElement("img");
+      img.src = product.image;
+      img.alt = product.name;
+
+      const category = document.createElement("p");
+      category.className = "category";
+      category.textContent = product.category;
+
+      const name = document.createElement("h3");
+      name.className = "name";
+      name.textContent = product.name;
+
+      const type = document.createElement("h4");
+      type.className = "type";
+      type.textContent = product.type;
+
+      const price = document.createElement("p");
+      price.className = "price";
+      price.textContent = product.price;
+
+      const description = document.createElement("h6");
+      description.className = "disc";
+      description.textContent = product.description;
+
+      card.appendChild(img);
+      card.appendChild(category);
+      card.appendChild(name);
+      card.appendChild(type);
+      card.appendChild(price);
+      card.appendChild(description);
+
+      return card;
+    }
+
+    // Function to display products in the container
+    function displayProducts(productsToDisplay) {
+      cardContainer.innerHTML = ''; // Clear previous cards
+      productsToDisplay.forEach(product => {
+        const card = createCard(product);
+        cardContainer.appendChild(card);
+      });
+    }
+    const iconLink = document.getElementById('iconIdLink');
+
+    iconLink.addEventListener('click', function () {
+
+      window.location.href = './icon.html';
+    });
+
+    const womenLink = document.getElementById('womenIdLink');
+
+    womenLink.addEventListener('click', function () {
+
+      window.location.href = './female.html';
+    });
+    const newLink = document.getElementById('newIdLink');
+
+    newLink.addEventListener('click', function () {
+
+      window.location.href = './new.html';
+    });
+    const menLink = document.getElementById('menIdLink');
+
+    menLink.addEventListener('click', function () {
+
+      window.location.href = './men.html';
+    });
+    const homeLink = document.getElementById('homeIdLink');
+
+    homeLink.addEventListener('click', function () {
+
+      window.location.href = './index.html';
+    });
+    const contactLink = document.getElementById('contachIdLink');
+
+    contactLink.addEventListener('click', function () {
+
+      window.location.href = './contact.html';
+    });
+    const loginLink = document.getElementById('loginIdLink');
+
+    loginLink.addEventListener('click', function () {
+
+      window.location.href = './login.html';
+    });
+    const sportsLink = document.getElementById('sportsIdLink');
+
+    sportsLink.addEventListener('click', function () {
+
+      window.location.href = './sportsAbk.html';
+    });
+
+
+    const saleIdLink = document.getElementById('saleIdLink');
+
+    saleIdLink.addEventListener('click', function () {
+
+      window.location.href = './saleABK.html';
+    });
+    const classicLink = document.getElementById('classicIdLink');
+    classicLink.addEventListener('click', function () {
+      console.log("click at classics")
+
+      window.location.href = './classicsABK.html';
+    });
+
+
+    // Add event listeners to category buttons
+    const categoryButtons = document.querySelectorAll("button");
+    categoryButtons.forEach(button => {
+      button.addEventListener("click", function () {
+        const selectedCategory = this.textContent.trim();
+        filterProducts(selectedCategory);
+      });
+    });
+    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+    function toggleScrollToTopButton() {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', toggleScrollToTopButton);
+
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Initial check
+    toggleScrollToTopButton();
+
+    // Function to filter products based on the selected category
+    function filterProducts(category) {
+      const filteredProducts = products.filter(product => product.category === category);
+      displayProducts(filteredProducts);
+    }
+  });
+
+</script>
