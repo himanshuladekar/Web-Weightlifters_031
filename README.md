@@ -22,5 +22,7 @@ Product Details: View detailed information for each shoe, including specificatio
 Search: Find shoes by model, color, size,category or other criteria.
 Disclaimer:
 This project is a reimplementation of design elements and functionalities inspired by the Reebok website. It is not an official Reebok product and does not infringe on their intellectual property. The purpose is for educational and portfolio development purposes only.
+-Below there is image of projct for refrences:
+![image](https://github.com/user-attachments/assets/7a8f7240-87ef-4745-b1f0-63e046fd493a)
 
 
